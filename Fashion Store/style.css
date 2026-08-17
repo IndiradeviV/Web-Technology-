@@ -1,0 +1,212 @@
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f6f0e5;
+            color: #4b4238;
+            box-sizing: border-box;
+        }
+
+        /* Navigation */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fffaf0;
+            border-bottom: 1px solid #c9a227;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #9a7b19;
+            letter-spacing: 3px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #5c5044;
+            margin-left: 20px;
+        }
+
+        .links a:hover {
+            color: #b08d20;
+        }
+
+
+        /* Introduction */
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .intro-text {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #e9ddca;
+        }
+
+        .intro-text h1 {
+            font-size: 42px;
+            color: #806515;
+            margin: 0 0 15px;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        .intro-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .intro-image {
+            background-image: url("images/Ethnic wear.jpg");
+            background-size: fit;
+            background-position: center;
+        }
+
+
+        /* Button */
+        .button {
+            width: 150px;
+            padding: 12px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgb(121, 94, 26);
+        }
+
+
+        /* Limited Offer */
+        .limited {
+            text-align: center;
+            padding: 30px;
+            background-color: #d8c7a7;
+            color: #594b35;
+            font-weight: bold;
+            animation: highlight 2s infinite alternate;
+        }
+
+        @keyframes highlight {
+
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0.6;
+            }
+        }
+
+
+        /* Featured Collection */
+        .featured {
+            padding: 35px;
+            background-color: #eee3d2;
+        }
+
+        .featured h2 {
+            text-align: center;
+            color: #806515;
+            margin-bottom: 25px;
+        }
+
+        .fashion-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .fashion-card {
+            background-color: #fffdf8;
+            border: 1px solid goldenrod;
+            padding: 15px;
+            text-align: center;
+            border-radius: 7px;
+        }
+
+        .fashion-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .fashion-card h3 {
+            color: #806515;
+        }
+
+        .price {
+            color: #9a7b19;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+
+        /* Newsletter */
+        .newsletter {
+            text-align: center;
+            padding: 35px;
+            background-color: #fffaf0;
+        }
+
+        .newsletter input {
+            padding: 11px;
+            width: 250px;
+            border: 1px solid goldenrod;
+            border-radius: 4px;
+        }
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 18px;
+            background-color: #e9ddca;
+            border-top: 1px solid goldenrod;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+
+            .topbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .links a {
+                margin: 5px;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image {
+                height: 300px;
+            }
+
+            .intro-text {
+                padding: 35px;
+            }
+
+            .fashion-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+        }
