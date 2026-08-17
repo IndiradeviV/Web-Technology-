@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Admission Form</title>
+
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Text Inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        /* Radio Buttons */
+        input[type="radio"] {
+            width: auto;
+            margin: 10px 5px 10px 0;
+        }
+
+        /* Checkbox */
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        /* YouTube Video */
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* College Image */
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+
+        /* Textarea */
+        textarea {
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Button Hover */
+        button:hover {
+            background-color: green;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Admission Form</h1>
+
+        <!-- College Image -->
+        <img src="images/Logo.png" alt="College Image">
+
+
+        <!-- YouTube Video -->
+        <iframe
+        src="https://www.youtube.com/embed/yrLmWpyHbqs?si=cYM7dVAuB30bU6st"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+</iframe>
+
+
+        <!-- Admission Form -->
+        <form>
+
+            <!-- Full Name -->
+            <label for="name">Full Name:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required>
+
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required>
+
+
+            <!-- Age -->
+            <label for="age">Age:</label>
+            <input
+                type="number"
+                id="age"
+                name="age"
+                placeholder="Enter your age"
+                min="1"
+                max="100"
+                required>
+
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth:</label>
+            <input
+                type="date"
+                id="dob"
+                name="dob"
+                required>
+
+
+            <!-- Gender -->
+            <label>Gender:</label>
+            <br>
+
+            <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                required>
+
+            <label for="male">Male</label>
+
+            <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female">
+
+            <label for="female">Female</label>
+
+            <br><br>
+
+
+            <!-- Course -->
+            <label for="course">Course:</label>
+
+            <select
+                id="course"
+                name="course"
+                required>
+
+                <option value="">Select Course</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="IT">IT</option>
+
+            </select>
+
+
+            <!-- Upload Photo -->
+            <label for="photo">Upload Photo:</label>
+
+            <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                required>
+
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+
+            <textarea
+                id="address"
+                name="address"
+                rows="4"
+                placeholder="Enter your address"
+                required></textarea>
+
+
+            <!-- Terms and Conditions -->
+            <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                value="accepted"
+                required>
+
+            <label for="terms">
+                I agree to the terms and conditions
+            </label>
+
+            <br><br>
+
+
+            <!-- Submit Button -->
+            <button type="submit">
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

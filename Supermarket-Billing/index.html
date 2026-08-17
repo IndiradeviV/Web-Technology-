@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supermarket Billing System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e6b45;
+        }
+
+        .product {
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            margin-top: 0;
+            color: #2e6b45;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #2e6b45;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e4d31;
+        }
+
+        #bill {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #eef7f0;
+            border-left: 5px solid #2e6b45;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Supermarket Bill</h1>
+
+        <!-- Product 1 -->
+        <div class="product">
+
+            <h3>Product 1</h3>
+
+            <label for="quantity1">Quantity:</label>
+            <input
+                type="number"
+                id="quantity1"
+                min="1"
+                placeholder="Enter quantity">
+
+            <label for="price1">Unit Price (₹):</label>
+            <input
+                type="number"
+                id="price1"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <!-- Product 2 -->
+        <div class="product">
+
+            <h3>Product 2</h3>
+
+            <label for="quantity2">Quantity:</label>
+            <input
+                type="number"
+                id="quantity2"
+                min="1"
+                placeholder="Enter quantity">
+
+            <label for="price2">Unit Price (₹):</label>
+            <input
+                type="number"
+                id="price2"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <!-- Product 3 -->
+        <div class="product">
+
+            <h3>Product 3</h3>
+
+            <label for="quantity3">Quantity:</label>
+            <input
+                type="number"
+                id="quantity3"
+                min="1"
+                placeholder="Enter quantity">
+
+            <label for="price3">Unit Price (₹):</label>
+            <input
+                type="number"
+                id="price3"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <button onclick="generateBill()">
+            Generate Bill
+        </button>
+
+
+        <!-- Bill Output -->
+        <div id="bill">
+            Bill details will appear here.
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // =====================================
+        // USER-DEFINED FUNCTION
+        // Calculate price of one product
+        // =====================================
+
+        function calculateProductTotal(quantity, price) {
+
+            return quantity * price;
+
+        }
+
+
+        // =====================================
+        // USER-DEFINED FUNCTION
+        // Generate Complete Bill
+        // =====================================
+
+        function generateBill() {
+
+            // Variables and Data Types
+            let quantities = [];
+            let prices = [];
+            let productTotal = [];
+            let total = 0;
+            let discount = 0;
+            let finalAmount = 0;
+
+
+            // =====================================
+            // ITERATION STATEMENT
+            // Read quantity and price
+            // =====================================
+
+            for (let i = 0; i < 3; i++) {
+
+                quantities[i] = Number(
+                    document.getElementById(
+                        "quantity" + (i + 1)
+                    ).value
+                );
+
+                prices[i] = Number(
+                    document.getElementById(
+                        "price" + (i + 1)
+                    ).value
+                );
+
+
+                // Call user-defined function
+                productTotal[i] =
+                    calculateProductTotal(
+                        quantities[i],
+                        prices[i]
+                    );
+
+
+                // Operator
+                total = total + productTotal[i];
+            }
+
+
+            // =====================================
+            // SELECTION STATEMENT
+            // Apply 10% discount if total > ₹2000
+            // =====================================
+
+            if (total > 2000) {
+
+                discount = total * 10 / 100;
+
+            }
+            else {
+
+                discount = 0;
+
+            }
+
+
+            // Calculate final amount
+            finalAmount = total - discount;
+
+
+            // =====================================
+            // DISPLAY BILL
+            // =====================================
+
+            document.getElementById("bill").innerHTML =
+
+                "<h2>Bill Summary</h2>" +
+
+                "<p>Product 1: ₹" +
+                productTotal[0].toFixed(2) +
+                "</p>" +
+
+                "<p>Product 2: ₹" +
+                productTotal[1].toFixed(2) +
+                "</p>" +
+
+                "<p>Product 3: ₹" +
+                productTotal[2].toFixed(2) +
+                "</p>" +
+
+                "<hr>" +
+
+                "<p><b>Total Amount:</b> ₹" +
+                total.toFixed(2) +
+                "</p>" +
+
+                "<p><b>Discount:</b> ₹" +
+                discount.toFixed(2) +
+                "</p>" +
+
+                "<p><b>Final Payable Amount:</b> ₹" +
+                finalAmount.toFixed(2) +
+                "</p>";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
