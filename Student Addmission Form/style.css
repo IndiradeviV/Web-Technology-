@@ -1,0 +1,123 @@
+
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Text Inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        /* Radio Buttons */
+        input[type="radio"] {
+            width: auto;
+            margin: 10px 5px 10px 0;
+        }
+
+        /* Checkbox */
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        /* YouTube Video */
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* College Image */
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+
+        /* Textarea */
+        textarea {
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Button Hover */
+        button:hover {
+            background-color: green;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+        }
+   
